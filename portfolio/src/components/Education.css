@@ -1,0 +1,22 @@
+.edu-timeline {
+  position: relative;
+  border-left: 2px solid #1e293b;
+  margin-left: 1rem;
+  padding-left: 2.5rem;
+}
+
+.edu-dot {
+  position: absolute;
+  left: -2.6rem;
+  top: 0.5rem;
+  width: 1.25rem;
+  height: 1.25rem;
+  background-color: #3b82f6;
+  border-radius: 9999px;
+  border: 4px solid #020617;
+  box-shadow: 0 0 15px #3b82f6;
+}
+
+@media (min-width: 768px) {
+  .edu-timeline { margin-left: 0; }
+}
