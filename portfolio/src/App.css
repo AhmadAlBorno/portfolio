@@ -72,3 +72,26 @@ section {
 main {
   flex: 1;
 }
+
+.site-container {
+  min-height: 100vh;
+  width: 100%;
+  position: relative;
+}
+
+/* عشان المحتوى يضل فوق الأنميشن */
+.content-wrapper {
+  position: relative;
+  z-index: 2;
+  /* إضافة طبقة شفافة خفيفة جداً لزيادة وضوح النصوص */
+  background: rgba(2, 6, 23, 0.3); 
+}
+
+section {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 100px 10%;
+}

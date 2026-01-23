@@ -1,74 +1,48 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;500;700&display=swap');
 
-/* 1. الإعدادات الأساسية لضمان عمل التصميم */
 :root {
-  --blue-main: #3b82f6;
-  --bg-dark: #020617;
-}
-
-html {
-  scroll-behavior: smooth !important; /* لضمان السكرول الناعم */
+  --bg-color: #050505; /* أسود أعمق */
+  --accent: #3b82f6;   /* أزرق يزن */
+  --card-bg: #0d0d0d;  /* لون البطاقات في موقع تروشانك */
+  --text-dim: #707070;
 }
 
 body {
+  background-color: var(--bg-color);
+  color: white;
+  font-family: 'Space Grotesk', sans-serif; /* خط مودرن زي الموقع */
   margin: 0;
-  padding: 0;
-  background-color: var(--bg-dark) !important;
-  color: #ffffff;
-  font-family: 'Inter', sans-serif;
   overflow-x: hidden;
 }
 
-/* 2. الخلفية المتدرجة (نفس يزن الحسنات) */
-.site-container {
-  min-height: 100vh;
-  width: 100%;
-  background: 
-    radial-gradient(circle at 50% 0%, rgba(59, 130, 246, 0.15) 0%, transparent 50%),
-    radial-gradient(circle at 100% 100%, rgba(59, 130, 246, 0.08) 0%, transparent 40%);
-  position: relative;
-}
-
-/* 3. تنسيق السيكشنات (عشان ما ينرصوا فوق بعض) */
+/* سيكشنات واسعة ومرتبة */
 section {
-  min-height: 100vh !important; /* هاد اللي بخلي كل سيكشن ياخد كامل الشاشة */
+  min-height: 100vh;
+  padding: 120px 8%;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
-  padding: 100px 20px;
-  max-width: 1200px;
-  margin: 0 auto;
 }
 
-/* 4. البطاقات الزجاجية (Glassmorphism) */
-.glass-card {
-  background: rgba(255, 255, 255, 0.03) !important;
-  backdrop-filter: blur(15px) !important;
-  -webkit-backdrop-filter: blur(15px) !important;
-  border: 1px solid rgba(255, 255, 255, 0.1) !important;
-  border-radius: 2rem;
-  transition: all 0.5s ease;
+/* تصميم البطاقات اللي بميز موقع Trushank */
+.modern-card {
+  background-color: var(--card-bg);
+  border-radius: 40px; /* انحناء عالي جداً */
+  padding: 60px;
+  border: 1px solid #1a1a1a;
+  transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-.glass-card:hover {
-  transform: translateY(-10px);
-  border-color: rgba(59, 130, 246, 0.4) !important;
-  background: rgba(255, 255, 255, 0.06) !important;
+.modern-card:hover {
+  border-color: #333;
+  transform: scale(1.01);
 }
 
-/* 5. الاسم واللوجو */
-.full-logo {
-  font-weight: 900;
-  letter-spacing: 0.2em;
-  background: linear-gradient(to right, #fff, #3b82f6);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  font-size: 1.5rem;
-}
-
-.glow-text {
-  text-shadow: 0 0 30px rgba(59, 130, 246, 0.5);
+/* الخط العريض (Heading) */
+.huge-title {
+  font-size: clamp(3rem, 10vw, 8rem);
+  font-weight: 700;
+  line-height: 0.9;
+  letter-spacing: -4px;
+  margin-bottom: 40px;
 }
